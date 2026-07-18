@@ -29,6 +29,17 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:none}
     @media(max-width:760px){.grid{inset:0 5%;grid-template-columns:repeat(2,1fr)}.wrap{width:90vw}.nav{height:64px}.brand{font-size:23px}.nav-links{gap:15px}.nav-links a{font-size:12px}.nav-links a:nth-child(2){display:none}.hero{min-height:calc(88svh - 64px)}.hero h1{font-size:clamp(53px,16vw,83px)}.section{padding:82px 0}.section-head{display:block;margin-bottom:45px}.section-title{margin-bottom:28px}.business-main{padding:25px}.business-main h3{font-size:56px}.feature-grid,.business-grid{grid-template-columns:1fr}.feature-grid{gap:1px}.business-card{min-height:300px;padding:27px}.value{grid-template-columns:42px 1fr;gap:15px;padding:33px 0}.value h3{font-size:35px}.value p{grid-column:2;font-size:15px}.value.taste{padding:48px 5vw;margin:0 -5.56vw}.taste-copy{font-size:17px!important}.taste-box{grid-column:1 / -1;font-size:17px!important;padding:21px}.join{padding:105px 0}.join h2{font-size:58px}footer{font-size:10px;gap:15px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.cta{transition:none}.pulse{box-shadow:none}}
+    /* Cinematic hero background and restrained motion */
+    .hero{position:relative;isolation:isolate;overflow:hidden;min-height:calc(100svh - 76px);padding:10vh 7vw 12vh;color:var(--paper)}
+    .hero:before{content:"";position:absolute;z-index:-2;inset:-4%;background:url("assets/shogun-hero.png") center 52%/cover no-repeat;animation:hero-drift 20s ease-in-out infinite alternate}
+    .hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(8,20,18,.86) 0%,rgba(8,20,18,.62) 46%,rgba(8,20,18,.31) 100%),linear-gradient(0deg,rgba(8,20,18,.45),transparent 58%)}
+    .hero-kicker{color:var(--lime)}.hero h1 span{color:var(--lime)}.hero-footer{color:var(--paper)}
+    @keyframes hero-drift{from{transform:scale(1)}to{transform:scale(1.075) translate(-.8%,-.5%)}}
+    @keyframes hero-copy{to{opacity:1;transform:none}}
+    .hero .hero-kicker,.hero h1,.hero .hero-lead,.hero .hero-footer{opacity:0;transform:translateY(20px)}
+    .hero.is-visible .hero-kicker{animation:hero-copy .65s .15s ease-out forwards}.hero.is-visible h1{animation:hero-copy .8s .32s ease-out forwards}.hero.is-visible .hero-lead{animation:hero-copy .7s .55s ease-out forwards}.hero.is-visible .hero-footer{animation:hero-copy .6s .74s ease-out forwards}
+    @media(max-width:760px){.hero{padding-inline:7vw}.hero:before{background-position:57% center}}
+    @media(prefers-reduced-motion:reduce){.hero .hero-kicker,.hero h1,.hero .hero-lead,.hero .hero-footer{opacity:1;transform:none;animation:none}.hero:before{animation:none}}
   </style>
 </head>
 <body>
